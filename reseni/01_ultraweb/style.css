@@ -1,0 +1,71 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+	box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+:root {
+    --header-bg: #20a;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.header {
+    background-color: var(--header-bg);
+    border: 2px solid var(--header-bg);
+}
+
+.logo,
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: var(--header-bg);
+}
+
+/* alternativní HTML s neuspořádaným seznamem */
+.nav {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+@media (min-width: 480px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        height: 100%; /* není potřeba pro alternativní HTML */
+    }
+
+    /* alternativní HTML s neuspořádaným seznamem */
+    .nav-item {
+        display: flex;
+        height: 100%;
+    }
+}
